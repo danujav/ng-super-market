@@ -1,19 +1,17 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Item} from "./item";
+import {DataService} from "../service/data.service";
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
   numberOfCustomers: number = 540;
   numberOfItems: number = 1200;
   numberOfSuppliers: number = 10;
-
-
   isShow: boolean = false;
-
   itemList: Item[] = [
     {
       code: 'I001',
@@ -46,6 +44,23 @@ export class DashboardComponent {
       qtyOnHand: 0
     }
   ]
+
+  apiData: any;
+  dataService: DataService;
+
+  constructor(dataService: DataService) {
+    this.dataService = dataService;
+  }
+
+  ngOnInit() {
+    this.fetchPosts();
+  }
+
+  fetchPosts(): void {
+    this.dataService.getApiData().subscribe((response) => {
+      this.apiData = response;
+    });
+  }
 
   toggleButtonClick(): void {
     this.isShow = !this.isShow;

@@ -5,13 +5,13 @@
     <div class="card" style="width: 18rem;">
       <img src="assets/cartoon-customer.png" class="card-img-top" alt="...">
       <div class="card-body">
-        <p class="card-text">Number Of Customers: <span [ngStyle]="{'color': 'red'}" >{{numberOfCustomers}}</span></p>
+        <p class="card-text">Number Of Customers: <span [ngStyle]="{'color': 'red'}">{{numberOfCustomers}}</span></p>
       </div>
     </div>
     <div [hidden]="isShow" class="card" style="width: 18.7rem;">
       <img src="assets/item.jpeg" class="card-img-top" alt="...">
       <div class="card-body">
-        <p class="card-text">Number Of Items: <span [ngStyle]="{'color': 'red'}">{{numberOfItems}}</span> </p>
+        <p class="card-text">Number Of Items: <span [ngStyle]="{'color': 'red'}">{{numberOfItems}}</span></p>
       </div>
     </div>
   </div>
@@ -46,8 +46,11 @@
 </div>
 
 <div class="m-5">
-  <h5>Item List</h5>
-  <pre>
-    {{itemList | json}}
+  <div *ngIf="apiData">
+    <h5>Post List</h5>
+    <pre>
+    {{apiData | json}}
     </pre>
+  </div>
+
 </div>

@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardHeaderComponent } from './dashboard/dashboard-header/dashboard-header.component';
+import {HttpClientModule} from "@angular/common/http";
 
 //Decorator - meta data
 @NgModule({
@@ -15,7 +16,8 @@ import { DashboardHeaderComponent } from './dashboard/dashboard-header/dashboard
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
