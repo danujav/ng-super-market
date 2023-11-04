@@ -16,3 +16,36 @@
 </div>
 <button type="button" class="btn btn-info m-5" (click)="toggleButtonClick()">Toggle</button>
 
+<div class="m-4" *ngIf="numberOfSuppliers > 0">
+  <h2>Out of stock item list:</h2>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Index</th>
+      <th>Code</th>
+      <th>Description</th>
+      <th>Unit Price</th>
+      <th [ngClass]="'col-qty'">Qty On Hand</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of itemList; let i = index;">
+      <ng-container *ngIf="item.qtyOnHand == 0">
+        <td [ngClass]="'tbl-index'">{{i}}</td>
+        <td>{{item.code}}</td>
+        <td>{{item.description | uppercase}}</td>
+        <td>{{item.price | currency: 'GBP'}}</td>
+        <td>{{item.qtyOnHand}}</td>
+      </ng-container>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="m-5">
+  <h5>Item List</h5>
+  <pre>
+    {{itemList | json}}
+    </pre>
+</div>
