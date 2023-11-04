@@ -1,3 +1,18 @@
 <app-dashboard-header></app-dashboard-header>
 
-<p>dashboard works!</p>
+<div class="mt-5 container text-center">
+  <div class="row align-items-center">
+    <div class="col-6 col-md-6 border border-primary rounded-3 border-3">
+      <p>
+        Number Of Customers: {{numberOfCustomers}}
+      </p>
+    </div>
+    <div [hidden]="isShow" class="col-6 col-md-6 border border-dark rounded-3 border-3">
+      <p>
+        Number Of Items: {{numberOfItems}}
+      </p>
+    </div>
+  </div>
+</div>
+<button type="button" class="btn btn-info m-5" (click)="toggleButtonClick()">Toggle</button>
+

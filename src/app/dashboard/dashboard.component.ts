@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
+  numberOfCustomers: number = 540;
+  numberOfItems: number = 1200;
 
+  isShow: boolean = false;
+
+  toggleButtonClick(): void {
+    this.isShow = !this.isShow;
+  }
 }
