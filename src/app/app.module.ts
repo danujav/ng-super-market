@@ -16,6 +16,7 @@ import { MatListModule } from '@angular/material/list';
 import { CustomerComponent } from './customer/customer.component';
 import { PostComponent } from './post/post.component';
 import { NotfoundComponentComponent } from './notfound-component/notfound-component.component';
+import {FormsModule} from "@angular/forms";
 
 //Decorator - meta data
 @NgModule({
@@ -37,7 +38,8 @@ import { NotfoundComponentComponent } from './notfound-component/notfound-compon
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

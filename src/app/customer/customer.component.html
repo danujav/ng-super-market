@@ -1,1 +1,41 @@
-<p>customer works!</p>
+{{customer | json}}
+
+<form (ngSubmit)="saveCustomer()">
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      name="customerId"
+      placeholder="Enter Customer Id"
+      [(ngModel)]="customer.id"
+    >
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      name="customerName"
+      placeholder="Enter Customer Name"
+      [(ngModel)]="customer.name"
+    >
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      name="customerAddress"
+      placeholder="Enter Customer Address"
+      [(ngModel)]="customer.address"
+    >
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      name="customerTel"
+      placeholder="Enter Customer Tel"
+      [(ngModel)]="customer.tel"
+    >
+  </div>
+  <button type="submit" class="btn btn-info m-5">Save Customer</button>
+</form>

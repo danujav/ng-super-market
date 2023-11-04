@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Customer} from "./customer";
 
 @Component({
   selector: 'app-customer',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./customer.component.scss']
 })
 export class CustomerComponent {
+  customer: Customer = {
+    id: 0,
+    name: '',
+    address: '',
+    tel: ''
+  }
 
+  saveCustomer(): void {
+    console.log(this.customer);
+  }
 }
