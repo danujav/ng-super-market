@@ -1,16 +1,18 @@
 <app-dashboard-header></app-dashboard-header>
 
 <div class="mt-5 container text-center">
-  <div class="row align-items-center">
-    <div class="col-6 col-md-6 border border-primary rounded-3 border-3">
-      <p>
-        Number Of Customers: {{numberOfCustomers}}
-      </p>
+  <div class="row justify-content-evenly">
+    <div class="card" style="width: 18rem;">
+      <img src="assets/cartoon-customer.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">Number Of Customers: <span [ngStyle]="{'color': 'red'}" >{{numberOfCustomers}}</span></p>
+      </div>
     </div>
-    <div [hidden]="isShow" class="col-6 col-md-6 border border-dark rounded-3 border-3">
-      <p>
-        Number Of Items: {{numberOfItems}}
-      </p>
+    <div [hidden]="isShow" class="card" style="width: 18.7rem;">
+      <img src="assets/item.jpeg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">Number Of Items: <span [ngStyle]="{'color': 'red'}">{{numberOfItems}}</span> </p>
+      </div>
     </div>
   </div>
 </div>
