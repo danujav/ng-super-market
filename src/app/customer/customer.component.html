@@ -39,3 +39,31 @@
   </div>
   <button type="submit" class="btn btn-info m-5">Save Customer</button>
 </form>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Telephone</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customerData; let i = index;">
+      <td>{{customer.id}}</td>
+      <td>{{customer.name}}</td>
+      <td>{{customer.address}}</td>
+      <td>{{customer.tel}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<!--<div class="m-5">
+  <div *ngIf="customerData">
+    <h5>Customer List</h5>
+    <pre>
+    {{customerData | json}}
+    </pre>
+  </div>
+</div>-->
