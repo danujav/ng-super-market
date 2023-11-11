@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {Customer} from "../../customer/customer";
 
 @Injectable({
   providedIn: 'root'
@@ -13,5 +14,9 @@ export class CustomerService {
 
   get(): Observable <any> {
     return this.http.get(this.URL);
+  }
+
+  save(customer: Customer) {
+    return this.http.post(this.URL, customer);
   }
 }

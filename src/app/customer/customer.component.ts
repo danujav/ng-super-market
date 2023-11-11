@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Customer} from "./customer";
 import {CustomerService} from "../service/customer/customer.service";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-customer',
@@ -8,6 +9,8 @@ import {CustomerService} from "../service/customer/customer.service";
   styleUrls: ['./customer.component.scss']
 })
 export class CustomerComponent implements OnInit {
+  @ViewChild('customerForm') customerForm!: NgForm;
+
   customer: Customer = {
     id: 0,
     name: '',
@@ -32,6 +35,10 @@ export class CustomerComponent implements OnInit {
   }
 
   saveCustomer(): void {
-    console.log(this.customer);
+    this.customerService.save(this.customer).subscribe((response) => {
+      console.log(response);
+      this.getAll();
+      this.customerForm.resetForm();
+    });
   }
 }
